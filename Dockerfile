@@ -4,4 +4,4 @@ WORKDIR /
 ENV TZ=Asia/Shanghai
 COPY application.yml ./
 EXPOSE ${PORT}
-CMD ["java", "-Duser.timezone=$TZ", "-jar", "/halo.jar", "--spring.config.location=classpath:/application.yml,file:./application.yml"]
+CMD ["-Duser.timezone=$TZ","--halo.security.initializer.superadminusername=admin", "--halo.security.initializer.superadminpassword=P@88w0rd", "--spring.config.location=classpath:/application.yml,file:./application.yml"]
