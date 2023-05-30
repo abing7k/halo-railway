@@ -1,8 +1,7 @@
 ARG PORT=8090
 FROM halohub/halo:2.5
 WORKDIR /
-RUN apt-get update && apt-get install -y tzdata && \
-    echo "Asia/Shanghai" > /etc/timezone && \ 
-    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-    
+ENV TZ=Asia/Shanghai
+COPY application.yml ./
 EXPOSE ${PORT}
+CMD ["java", "-Duser.timezone=$TZ", "-jar", "/halo.jar", "--spring.config.location=classpath:/application.yml,file:./application.yml"]
