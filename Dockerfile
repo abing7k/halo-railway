@@ -5,4 +5,4 @@ WORKDIR /
 COPY application.yml ./
 EXPOSE ${PORT}
 # ENTRYPOINT ["sh", "-c" ,"java ${JVM_OPTS} org.springframework.boot.loader.JarLauncher ${0} ${@}", "-Duser.timezone=$TZ", "--halo.security.initializer.superadminusername=admin",  "--halo.security.initializer.superadminpassword=P@88w0rd", "--spring.config.location=classpath:/application.yml,file:./application.yml"]
-CMD [ "--spring.config.location=classpath:/application.yml,file:./application.yml" ,"JVM_OPTS=-Xmx256m"]
+# CMD [ "--spring.config.location=classpath:/application.yml,file:./application.yml" ,"JVM_OPTS=-Xmx256m"]
